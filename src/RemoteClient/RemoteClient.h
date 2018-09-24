@@ -1,0 +1,10 @@
+#ifndef MULTIRAKLIB_REMOTECLIENT_H
+#define MULTIRAKLIB_REMOTECLIENT_H
+
+
+class RemoteClient {
+
+};
+
+
+#endif //MULTIRAKLIB_REMOTECLIENT_H
