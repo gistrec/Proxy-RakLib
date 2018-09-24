@@ -4,6 +4,7 @@
 #include <vector>
 #include "../Packets/Packet.h"
 #include "../RemoteClient/RemoteClient.h"
+#include "../Socket.h"
 
 /**
  * Класс описывает сущность удаленного сервера
@@ -13,23 +14,23 @@ private:
     /**
      * Адрес сервера
      */
-    struct sockaddr_in address;
+    struct sockaddr_in _address;
 
     /**
      * Клиенты на текущем сервере
      */
-    std::vector<RemoteClient> clients;
+    std::vector<RemoteClient> _clients;
 
     /**
      * Сокет для общения с сервером
      */
-    Socket internalSocket;
+    Socket _socket;
 public:
     /**
      * В конструкторе создаем сокет
      * @param address
      */
-    RemoteServer(sockaddr_in &address);
+    explicit RemoteServer(sockaddr_in &address);
 
     /**
      * Функция вызывается при получении пакета от сервера
